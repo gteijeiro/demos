@@ -10,6 +10,5 @@
     <WebStackScaffolding_DbContextTypeFullName>Web.Agenda.Core.Models.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
     <WebStackScaffolding_IsAsyncSelected>True</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>agendatest - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

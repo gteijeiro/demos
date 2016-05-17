@@ -10,18 +10,18 @@ namespace Web.Agenda.Core.ViewModels.Manage
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contraseña Actual")]
+        [Display(Name = "Current password")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "La contreña debe tener {0} como minimo caracteres y {2} como maximo.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Nueva Contraseña")]
+        [Display(Name = "New password")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar Nueva Contraseña")]
-        [Compare("NewPassword", ErrorMessage = "La contraseña de confirmacion no es igual.")]
+        [Display(Name = "Confirm new password")]
+        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 }
