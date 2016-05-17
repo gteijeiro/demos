@@ -44,11 +44,16 @@ namespace Web.Agenda.Core
                 .AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+                {
+                    options.Cookies.ApplicationCookie.LoginPath = "/Home";
+                })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+
+            
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

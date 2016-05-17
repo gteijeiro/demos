@@ -10,6 +10,6 @@ namespace Web.Agenda.Core.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
-        public DbSet<AgendaDb> Agenda { get; set; }
+
     }
 }

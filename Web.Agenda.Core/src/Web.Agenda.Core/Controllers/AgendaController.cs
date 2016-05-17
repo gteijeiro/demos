@@ -6,25 +6,29 @@ using Microsoft.Data.Entity;
 using Web.Agenda.Core.Models;
 using Web.Agenda.Core.ViewModels.Agenda;
 using Microsoft.AspNet.Authorization;
+using Microsoft.AspNet.Identity;
+using System.Security.Claims;
 
 namespace Web.Agenda.Core.Controllers
 {
     [Authorize]
     public class AgendaController : Controller
     {
+        private readonly UserManager<ApplicationUser> _userManager;
         private ApplicationDbContext _context;
 
-        public AgendaController(ApplicationDbContext context)
+        public AgendaController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Agenda
         public async Task<IActionResult> Index()
         {
             var agendaDb = await _context.Agendas.ToListAsync();
-
-            var agendaViewModelList = agendaDb.Select(x => new AgendaViewModel()
+            var user = await this.GetCurrentUserAsync();
+            var agendaViewModelList = agendaDb.Where(x => x.UserId == user.Id).Select(x => new AgendaViewModel()
             {
                 Cell = x.Cell,
                 FirstName = x.FirstName,
@@ -77,8 +81,8 @@ namespace Web.Agenda.Core.Controllers
                 {
                     Cell = agendaViewModel.Cell,
                     FirstName = agendaViewModel.FirstName,
-                    Id = agendaViewModel.Id,
-                    LastName = agendaViewModel.LastName
+                    LastName = agendaViewModel.LastName,
+                    User = await this.GetCurrentUserAsync()                    
                 };
 
                 _context.Agendas.Add(agendaDb);
@@ -143,11 +147,19 @@ namespace Web.Agenda.Core.Controllers
                 return HttpNotFound();
             }
 
-            AgendaDb agendaViewModel = await _context.Agendas.SingleAsync(m => m.Id == id);
-            if (agendaViewModel == null)
+            AgendaDb agendaDb = await _context.Agendas.SingleAsync(m => m.Id == id);
+            if (agendaDb == null)
             {
                 return HttpNotFound();
             }
+
+            var agendaViewModel = new AgendaViewModel()
+            {
+                Cell = agendaDb.Cell,
+                FirstName = agendaDb.FirstName,
+                Id = agendaDb.Id,
+                LastName = agendaDb.LastName
+            };
 
             return View(agendaViewModel);
         }
@@ -161,6 +173,11 @@ namespace Web.Agenda.Core.Controllers
             _context.Agendas.Remove(agendaViewModel);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        private async Task<ApplicationUser> GetCurrentUserAsync()
+        {
+            return await _userManager.FindByIdAsync(HttpContext.User.GetUserId());
         }
     }
 }
