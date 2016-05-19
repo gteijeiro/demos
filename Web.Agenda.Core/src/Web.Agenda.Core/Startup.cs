@@ -29,7 +29,10 @@ namespace Web.Agenda.Core
                 builder.AddUserSecrets();
             }
 
+
+
             builder.AddEnvironmentVariables();
+            
             Configuration = builder.Build();
         }
 
@@ -50,11 +53,9 @@ namespace Web.Agenda.Core
                 })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-            services.AddMvc();
-
             
-
+            services.AddMvc();            
+            
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
@@ -67,7 +68,7 @@ namespace Web.Agenda.Core
             loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
-            {
+            {                
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
@@ -76,7 +77,7 @@ namespace Web.Agenda.Core
             {
                 app.UseExceptionHandler("/Home/Error");
 
-                // For more details on creating database during deployment see http://go.microsoft.com/fwlink/?LinkID=615859
+                
                 try
                 {
                     using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
@@ -94,8 +95,6 @@ namespace Web.Agenda.Core
             app.UseStaticFiles();
 
             app.UseIdentity();
-
-            // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
             {

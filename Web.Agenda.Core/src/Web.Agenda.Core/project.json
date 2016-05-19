@@ -25,7 +25,7 @@
     "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final"    
   },
 
   "commands": {
@@ -33,8 +33,7 @@
     "ef": "EntityFramework.Commands"
   },
 
-  "frameworks": {
-    "dnx451": { },
+  "frameworks": {   
     "dnxcore50": { }
   },
 
