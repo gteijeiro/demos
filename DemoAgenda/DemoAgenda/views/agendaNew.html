@@ -1,0 +1,23 @@
+﻿<div>
+    <h2> Usuario: {{ user }}</h2>
+    <h3> {{ error }}</h3>
+</div>
+
+<form>
+    <div>
+        <label>Nombre</label>
+        <input type="text" id="firstname" name="firstname" data-ng-model="newAgenda.firstname" />
+    </div>
+    <div>
+        <label>Apellido</label>
+        <input type="text" id="lastname" name="lastname" data-ng-model="newAgenda.lastname"  />
+    </div>
+    <div>
+        <label>Numero</label>
+        <input type="text" id="number" name="number" data-ng-model="newAgenda.number"  />
+    </div>
+
+    <div>
+        <input type="submit" value="Agregar" data-ng-click="addAgenda()" />
+    </div>
+</form>

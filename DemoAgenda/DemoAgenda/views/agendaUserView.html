@@ -1,0 +1,30 @@
+﻿<div>
+    <h2> Usuario: {{ user }}</h2>
+    <h3> {{ error }}</h3>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="agenda in agendaList">
+            <td>{{ agenda.firstname }}</td>
+            <td>{{ agenda.lastname }}</td>
+            <td>{{ agenda.number }}</td>
+            <td><a data-ng-href="#/user/edit/{{ agenda.id }}">Editar</a></td>
+            <td><a data-ng-href="#/user/delete/{{ agenda.id }}">Eliminar</a></td>
+        </tr>
+    </tbody>    
+</table>
+
+<div>
+    <a data-ng-href="#/user/new/{{ user }}">Agregar nuevo</a>
+    <br />
+    <a data-ng-href="#/">Volver a la busqueda</a>
+
+</div>

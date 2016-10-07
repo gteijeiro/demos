@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAgenda", "DemoAgenda\DemoAgenda.csproj", "{93397148-1551-4010-860C-6B07F44FEEC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{8BE96F9F-AB9A-40BA-B69E-90DCBC7F77D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6B6390A5-93CC-4D31-B1A3-8A7952B37366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAgenda.Data", "Data\DemoAgenda.Data\DemoAgenda.Data.csproj", "{492531C5-29F7-43A0-947E-DDD0D452D5C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{42903160-6D10-43D0-9BCC-FFC47949C574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAgenda.Entities", "DemoAgenda.Entities\DemoAgenda.Entities.csproj", "{1106C1F7-37F2-4200-B761-6C86F32BAAF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAgenda.Logic", "Logic\DemoAgenda.Logic\DemoAgenda.Logic.csproj", "{9693FBB8-8499-4563-891F-00DF586C554D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAgenda.Test", "DemoAgenda.Test\DemoAgenda.Test.csproj", "{BB6880FE-CA04-4915-8263-601EA8B92906}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93397148-1551-4010-860C-6B07F44FEEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93397148-1551-4010-860C-6B07F44FEEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93397148-1551-4010-860C-6B07F44FEEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93397148-1551-4010-860C-6B07F44FEEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492531C5-29F7-43A0-947E-DDD0D452D5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492531C5-29F7-43A0-947E-DDD0D452D5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492531C5-29F7-43A0-947E-DDD0D452D5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492531C5-29F7-43A0-947E-DDD0D452D5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1106C1F7-37F2-4200-B761-6C86F32BAAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1106C1F7-37F2-4200-B761-6C86F32BAAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1106C1F7-37F2-4200-B761-6C86F32BAAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1106C1F7-37F2-4200-B761-6C86F32BAAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9693FBB8-8499-4563-891F-00DF586C554D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9693FBB8-8499-4563-891F-00DF586C554D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9693FBB8-8499-4563-891F-00DF586C554D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9693FBB8-8499-4563-891F-00DF586C554D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB6880FE-CA04-4915-8263-601EA8B92906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6880FE-CA04-4915-8263-601EA8B92906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6880FE-CA04-4915-8263-601EA8B92906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6880FE-CA04-4915-8263-601EA8B92906}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{492531C5-29F7-43A0-947E-DDD0D452D5C7} = {6B6390A5-93CC-4D31-B1A3-8A7952B37366}
+		{1106C1F7-37F2-4200-B761-6C86F32BAAF5} = {42903160-6D10-43D0-9BCC-FFC47949C574}
+		{9693FBB8-8499-4563-891F-00DF586C554D} = {8BE96F9F-AB9A-40BA-B69E-90DCBC7F77D4}
+	EndGlobalSection
+EndGlobal

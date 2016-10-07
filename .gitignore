@@ -3,3 +3,13 @@
 ################################################################################
 
 /DemoAgenda/DemoAgenda/bin
+/DemoAgenda/Data/DemoAgenda.Data/bin/Debug
+/DemoAgenda/Data/DemoAgenda.Data/obj/Debug
+/DemoAgenda/DemoAgenda/obj/Debug
+/DemoAgenda/DemoAgenda.Entities/bin/Debug
+/DemoAgenda/DemoAgenda.Entities/obj/Debug
+/DemoAgenda/DemoAgenda.Test/bin/Debug
+/DemoAgenda/DemoAgenda.Test/obj/Debug
+/DemoAgenda/Logic/DemoAgenda.Logic/bin/Debug
+/DemoAgenda/Logic/DemoAgenda.Logic/obj/Debug
+/DemoAgenda/packages
