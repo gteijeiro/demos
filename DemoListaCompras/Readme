@@ -1,0 +1,37 @@
+Demo de ASP.NET WEB API 2, donde se implementa DI sobre un ABM simple de Listado de Compras. 
+ 
+ Además, hay un web site en Angular JS que consume la API creada. 
+ 
+ Contiene configuración del web.config para correr IIS con los métodos PUT y DELETE además.
+ 
+ Esta versión utiliza localdb como motor de base de datos y para que funcione sobre IIS se debe hacer lo siguiente:
+ 
+ Ingresar a la carpeta:
+ 
+ C:\Windows\System32\inetsrv\config
+ 
+ Localizar el archivo applicationHost (este no me dejo editarlo en esa carpeta, por lo que copie a otro directorio).
+ 
+ **Debemos tener en cuenta el pool de aplicación configurado en el IIS sobre la aplicación creada primero, por ej si seleccione el pool DefaultPool, 
+ es el que tenemos que tener en cuenta.**
+ 
+ Buscamos dentro del archivo 
+ 
+<applicationPools>
+    <add name="DefaultAppPool" />
+    <add name="Classic .NET AppPool" managedRuntimeVersion="v2.0" managedPipelineMode="Classic" />
+    <add name=".NET v2.0 Classic" managedRuntimeVersion="v2.0" managedPipelineMode="Classic" />
+    <add name=".NET v2.0" managedRuntimeVersion="v2.0" />
+    <add name=".NET v4.5 Classic" managedRuntimeVersion="v4.0" managedPipelineMode="Classic" />
+    <add name=".NET v4.5" managedRuntimeVersion="v4.0" />
+    <applicationPoolDefaults managedRuntimeVersion="v4.0">
+        <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
+    </applicationPoolDefaults>
+</applicationPools>
+
+**En este caso yo utilice el pool ".NET v4.5" para mi aplicación.**
+
+Modificar loadUserProfile y setProfileEnvironment en "true" los dos.
+
+
+
