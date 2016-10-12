@@ -1,0 +1,7 @@
+Hola Mundo desde .NET Core 
+
+Comando usados:
+
+dotnet new
+dotnet restore
+dotnet run
