@@ -1,0 +1,29 @@
+﻿<h3>Agregar al carrito</h3>
+<div>{{ error }}</div>
+<form ng-init="loadNewCompra()">
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <input type="text" id="description" name="description" placeholder="Descripción" class="form-control" required ng-model="compra.description" />
+        <span id="valDescription" class="help-block">Es requerido.</span>
+    </div>
+    <div class="form-group">
+        <label for="price">Precio</label>
+        <input type="text" id="price" name="price" placeholder="Precio" class="form-control" ng-model="compra.price" />
+    </div>
+    <div class="form-group">
+        <label for="amount">Cantidad</label>
+        <div class="votingButton" ng-click="upAmount()">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </div>
+        <div class="badge badge-inverse">
+            <div>{{ compra.amount }}</div>
+        </div>
+        <div class="votingButton" ng-click="downAmount()">
+            <i class="glyphicon glyphicon-chevron-down"></i>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Agregar" class="btn btn-success" ng-click="addNew()" />
+        <a ng-href="#/" class="btn btn-default">Volver a la lista</a>
+    </div>
+</form>

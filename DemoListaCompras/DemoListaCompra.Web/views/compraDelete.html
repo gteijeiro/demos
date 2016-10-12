@@ -1,0 +1,22 @@
+﻿<h3>¿Seguro desea borrar este elemento del carrito?</h3>
+<div>{{ error }}</div>
+<form ng-init="loadCompra()">
+    <div class="form-group">
+        <label>Descripción</label>
+        <input class="form-control" type="text" disabled ng-model="compra.description " />
+    </div>
+    <div class="form-group">
+        <label>Precio</label>
+        <input class="form-control" type="text" disabled ng-model="compra.price " />
+    </div>
+    <div class="form-group">
+        <label>Cantidad</label>
+        <div class="badge badge-inverse">
+            <div>{{ compra.amount }}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Borrar" class="btn btn-danger" ng-click="deleteCompra()" />
+        <a ng-href="#/" class="btn btn-default">Volver a la lista</a>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+﻿<div class="container-fluid" ng-controller="compraController" ng-init="loadListCompra()">
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="compra in compraList">
+                <td>{{ compra.description}}</td>
+                <td>{{ compra.price }}</td>
+                <td>{{ compra.amount}}</td>
+                <td><a ng-href="#/compra/edit/{{ compra.id}}">Editar</a></td>
+                <td><a ng-href="#/compra/delete/{{ compra.id}}">Borrar</a></td>                
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <a ng-href="#/compra/new/" class="btn btn-success">Agregar al carrito</a>
+</div>
