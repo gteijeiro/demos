@@ -1,4 +1,5 @@
 ﻿using DemoListaCompra.Web.MVC.Models;
+using DemoListaCompras.Entities;
 using DemoListaCompras.Logic.Contracts;
 using System;
 using System.Collections.Generic;
@@ -31,5 +32,43 @@ namespace DemoListaCompra.Web.MVC.Controllers
 
             return View(allcompraList);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var edit = compraLogic.GetById(id);
+
+            var model = new CompraModel()
+            {
+                Amount = edit.Amount,
+                Description = edit.Decription,
+                Id = edit.Id,
+                Price = edit.Price
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(CompraModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var compra = new CompraBE()
+                {
+                    Amount = model.Amount,
+                    DateChanged = DateTime.Now,
+                    Decription = model.Description,
+                    Id = model.Id,
+                    Price = model.Price
+                };
+
+                compraLogic.Update(compra);
+
+               return RedirectToAction("Index");
+            }            
+
+            return View(model);
+        }
+
     }
 }
